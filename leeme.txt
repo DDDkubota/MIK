@@ -1,0 +1,1 @@
+Recuerda editar los archivos conexion.php de acuerdo a tu servidor y tu usuario y nombrar la base de datos como MIK
