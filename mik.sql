@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-04-2020 a las 23:12:51
+-- Tiempo de generación: 13-04-2020 a las 15:46:50
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.1.33
 
@@ -106,6 +106,7 @@ INSERT INTO `tip_vivienda` (`id_tip`, `tipo`) VALUES
 CREATE TABLE `usuarios` (
   `id_user` int(100) NOT NULL,
   `name_user` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `info_user` text COLLATE utf8_unicode_ci NOT NULL,
   `mail_user` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `pass_user` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -114,14 +115,8 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_user`, `name_user`, `mail_user`, `pass_user`) VALUES
-(1, 'pepe', 'ckubota54@gmail.com', '123'),
-(2, 'kubota', 'ckubot54212@gmail.com', '123'),
-(3, 'julieta23', 'rosita@gmail.com', '1234'),
-(4, 'julio12', 'rosita12@gmail.com', '123'),
-(5, '', '', ''),
-(6, '', '', ''),
-(7, 'pepito', 'lalo@gmail.com ', '123');
+INSERT INTO `usuarios` (`id_user`, `name_user`, `info_user`, `mail_user`, `pass_user`) VALUES
+(22, 'rex', 'Inmobilaria fuera de este mundo ', 'ckubota54@gmail.com', '123');
 
 --
 -- Índices para tablas volcadas
@@ -165,7 +160,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  MODIFY `id_public` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_public` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `tip_vivienda`
@@ -177,7 +172,7 @@ ALTER TABLE `tip_vivienda`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

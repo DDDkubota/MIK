@@ -37,11 +37,12 @@ Toast.fire({
 
 <?php
 $id_user=$_SESSION['id'];
- $query="SELECT u.name_user, u.mail_user from usuarios u where u.id_user='$id_user'";
+ $query="SELECT u.name_user, u.mail_user, u.info_user from usuarios u where u.id_user='$id_user'";
 $resultado = mysqli_query($conexion, $query);
 while($consulta= mysqli_fetch_array($resultado)){
     $name=$consulta['name_user'];
     $correo=$consulta['mail_user'];
+    $info=$consulta['info_user'];
 }
 ?>
 
@@ -54,16 +55,18 @@ while($consulta= mysqli_fetch_array($resultado)){
     <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
+      <th scope="col"></th>
       <th scope="col">Usuario</th>
+      <th scope="col">Informacion de la empresa</th>
       <th scope="col">Correo</th>
       
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row"><img src=<?php echo 'public/'.$_SESSION['id'].'/FP/1.jpg' ?> alt=""></th>
       <td><?php echo $name ?></td>
+      <td><?php echo $info ?></td>
       <td><?php echo $correo ?></td>
       
     </tr>
@@ -126,12 +129,16 @@ while($consulta= mysqli_fetch_array($resultado)){
  <?php include ('scripts.php') ?>
 
   <script>    
+
+  
     $(document).on("ready", function(){
     listar();
     });
 
     var listar = function(){
-
+  
+     
+  
       var table = $("#dt_pyt").DataTable({
           "ajax":{
              "method":"POST",
@@ -157,6 +164,7 @@ while($consulta= mysqli_fetch_array($resultado)){
 
      
     }
+  
 
     var idioma_espanol = {
       "sProcessing":     "Procesando...",

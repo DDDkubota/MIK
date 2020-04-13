@@ -11,15 +11,23 @@ $resultado = mysqli_query($mysqli, $query);
 if ( !$resultado ){
 	die("Error");
 
-}else{
-	while( $data= mysqli_fetch_assoc($resultado)){
-		$arreglo["data"][] = $data;
-	}
-	echo json_encode($arreglo);
+}else{ 
+	$totalFilas    =    mysql_num_rows($resultado); 
+	if($totalFilas==0) {
+		while( $data= mysqli_fetch_assoc($resultado)){
+			$arreglo["data"][] = $data;
+		}
+		echo json_encode($arreglo);
+		mysqli_free_result($resultado);
+		mysqli_close($mysqli);
+
+}else {
+	
+
+}
 }
 
-mysqli_free_result($resultado);
-mysqli_close($mysqli);
+
 
 
 ?>

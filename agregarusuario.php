@@ -19,12 +19,16 @@
     </fieldset>
     <fieldset>
       <input placeholder="Correo Electronico" type="text" name="correo" required>
-      
+      <fieldset>
+      <textarea placeholder="Informacion del Perfil" name="text1" tabindex="5" required></textarea>
+    </fieldset>
     </fieldset>
     <fieldset>
       <input placeholder="Contraseña" type="text" name="pass" required>
     </fieldset>
     <fieldset>
+    Agregar Foto de Perfil
+    <input placeholder="Subir Foto" name="uploadedfile" type="file" />
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
     </fieldset>
     
